@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+
+cd "$(dirname "$0")/.."
+
+# Bootstrap checks for this repository until application checks are added.
+test -s AGENTS.md
+test -s LICENSE
+sh -n scripts/ci
+git diff --check HEAD
+
+echo "Repository checks passed."
