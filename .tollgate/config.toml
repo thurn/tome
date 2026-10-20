@@ -1,0 +1,9 @@
+version = 1
+
+[remote]
+enabled = true
+
+[[step]]
+name = "ci"
+run = "./scripts/ci"
+timeout = "10m"
